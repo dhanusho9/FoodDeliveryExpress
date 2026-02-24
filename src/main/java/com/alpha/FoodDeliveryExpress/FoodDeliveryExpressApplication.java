@@ -2,6 +2,8 @@ package com.alpha.FoodDeliveryExpress;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class FoodDeliveryExpressApplication {
@@ -9,6 +11,10 @@ public class FoodDeliveryExpressApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FoodDeliveryExpressApplication.class, args);
 	}
-
+	
+	@Bean
+	public RestTemplate getresttemp() {
+		return new RestTemplate();
+	}
 }
 	

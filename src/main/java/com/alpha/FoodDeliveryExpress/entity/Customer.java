@@ -5,10 +5,9 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-
 public class Customer {
 	
-	 @Id
+	    @Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private int id;
 
@@ -29,6 +28,21 @@ public class Customer {
 
 	    @OneToMany(cascade = CascadeType.ALL)
 	    private List<Item> cart;
+	    
+	    @OneToMany(cascade=CascadeType.ALL)
+	    private List<CartItem> cartItems;
+
+	    public Customer(List<CartItem> cartItems) {
+	        this.cartItems = cartItems;
+	    }
+
+	    public List<CartItem> getCartItems() {
+	        return cartItems;
+	    }
+
+	    public void setCartItems(List<CartItem> cartItems) {
+	        this.cartItems = cartItems;
+	    }
 
 	    public Customer(){
 	    	
@@ -68,7 +82,7 @@ public class Customer {
 	        return mobno;
 	    }
 
-	    public void setMobno( long mobno) {
+		public void setMobno( long mobno) {
 	        this.mobno = mobno;
 	    }
 
@@ -111,6 +125,8 @@ public class Customer {
 	    public void setCart(List<Item> cart) {
 	        this.cart = cart;
 	    }
+	    
+	    
 
 		@Override
 		public String toString() {

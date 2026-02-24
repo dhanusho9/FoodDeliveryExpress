@@ -13,7 +13,7 @@ public class DeleteCustomer {
 	  @Autowired
 	    private CustomerService customerService;
 
-	    @DeleteMapping("/delete/customer")
+		@DeleteMapping("/delete/customer")
 	    public void deleteCustomer(@RequestParam long mobno){
 	        customerService.deleteCustomer(mobno);
 

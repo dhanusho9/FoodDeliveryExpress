@@ -9,67 +9,207 @@ public class Address {
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private int id;
 	  
-	    @Column(unique=true)
-	    private String street;
+//   @Column(unique=true)
+//   private String street;
+//
+//   private String landmark;
+//
+//   private String city;
+//
+//   private String state;
+//
+//   private String country;
+//
+//   private int pincode;
+   private  Double latitude;
+   private Double longitude;
+   //House Details
+   private String flatNumber;
+   private String floor;
+   private String buildingName;
+   private String street;
+   //Area Details
+   private String area;
+   private String landmark;
+   private String city;
+   private String district;
+   private String state;
+   private String country;
+   private String pincode;
+   //Metadata
+   private  String addressType;
+   private Boolean isDefault;
 
-	    private String landmark;
 
-	    private String city;
+   public Address(String addressType, String area, String buildingName, String city, String country, String district, String flatNumber, String floor, Integer id, Boolean isDefault, String landmark, Double latitude, Double longitude, String pincode, String state, String street) {
+       this.addressType = addressType;
+       this.area = area;
+       this.buildingName = buildingName;
+       this.city = city;
+       this.country = country;
+       this.district = district;
+       this.flatNumber = flatNumber;
+       this.floor = floor;
+       this.id = id;
+       this.isDefault = isDefault;
+       this.landmark = landmark;
+       this.latitude = latitude;
+       this.longitude = longitude;
+       this.pincode = pincode;
+       this.state = state;
+       this.street = street;
+   }
 
-	    private String state;
+   public Address() {
+   }
 
-	    private String country;
+   public String getAddressType() {
+       return addressType;
+   }
 
-	    private int pincode;
+   public void setAddressType(String addressType) {
+       this.addressType = addressType;
+   }
 
-	    // No-arg constructor (required by JPA)
-	    public Address() {
-	    }
+   public String getArea() {
+       return area;
+   }
 
-	    // All-fields constructor (without id – best practice)
-	    public Address(String street, String landmark,
-	                   String city, String state, String country, int pincode) {
-	        this.street = street;
-	        this.landmark = landmark;
-	        this.city = city;
-	        this.state = state;
-	        this.country = country;
-	        this.pincode = pincode;
-	    }
+   public void setArea(String area) {
+       this.area = area;
+   }
 
-	    // Getters and Setters
-	    public int getId() { return id; }
-	    public void setId(int id) { this.id = id; }
+   public String getBuildingName() {
+       return buildingName;
+   }
 
-	    public String getStreet() { return street; }
-	    public void setStreet(String street) { this.street = street; }
+   public void setBuildingName(String buildingName) {
+       this.buildingName = buildingName;
+   }
 
-	    public String getLandmark() { return landmark; }
-	    public void setLandmark(String landmark) { this.landmark = landmark; }
+   public String getCity() {
+       return city;
+   }
 
-	    public String getCity() { return city; }
-	    public void setCity(String city) { this.city = city; }
+   public void setCity(String city) {
+       this.city = city;
+   }
 
-	    public String getState() { return state; }
-	    public void setState(String state) { this.state = state; }
+   public String getCountry() {
+       return country;
+   }
 
-	    public String getCountry() { return country; }
-	    public void setCountry(String country) { this.country = country; }
+   public void setCountry(String country) {
+       this.country = country;
+   }
 
-	    public int getPincode() { return pincode; }
-	    public void setPincode(int pincode) { this.pincode = pincode; }
+   public String getDistrict() {
+       return district;
+   }
 
-	    // toString override
-	    @Override
-	    public String toString() {
-	        return "Address{" +
-	                "id=" + id +
-	                ", street='" + street + '\'' +
-	                ", landmark='" + landmark + '\'' +
-	                ", city='" + city + '\'' +
-	                ", state='" + state + '\'' +
-	                ", country='" + country + '\'' +
-	                ", pincode=" + pincode +
-	                '}';
-	    }
+   public void setDistrict(String district) {
+       this.district = district;
+   }
+
+   public String getFlatNumber() {
+       return flatNumber;
+   }
+
+   public void setFlatNumber(String flatNumber) {
+       this.flatNumber = flatNumber;
+   }
+
+   public String getFloor() {
+       return floor;
+   }
+
+   public void setFloor(String floor) {
+       this.floor = floor;
+   }
+
+   public Integer getId() {
+       return id;
+   }
+
+   public void setId(Integer id) {
+       this.id = id;
+   }
+
+   public Boolean getDefault() {
+       return isDefault;
+   }
+
+   public void setDefault(Boolean aDefault) {
+       isDefault = aDefault;
+   }
+
+   public String getLandmark() {
+       return landmark;
+   }
+
+   public void setLandmark(String landmark) {
+       this.landmark = landmark;
+   }
+
+   public Double getLatitude() {
+       return latitude;
+   }
+
+   public void setLatitude(Double latitude) {
+       this.latitude = latitude;
+   }
+
+   public Double getLongitude() {
+       return longitude;
+   }
+
+   public void setLongitude(Double longitude) {
+       this.longitude = longitude;
+   }
+
+   public String getPincode() {
+       return pincode;
+   }
+
+   public void setPincode(String pincode) {
+       this.pincode = pincode;
+   }
+
+   public String getState() {
+       return state;
+   }
+
+   public void setState(String state) {
+       this.state = state;
+   }
+
+   public String getStreet() {
+       return street;
+   }
+
+   public void setStreet(String street) {
+       this.street = street;
+   }
+
+   @Override
+   public String toString() {
+       return "Address{" +
+               "addressType='" + addressType + '\'' +
+               ", id=" + id +
+               ", latitude=" + latitude +
+               ", longitude=" + longitude +
+               ", flatNumber='" + flatNumber + '\'' +
+               ", floor='" + floor + '\'' +
+               ", buildingName='" + buildingName + '\'' +
+               ", street='" + street + '\'' +
+               ", area='" + area + '\'' +
+               ", landmark='" + landmark + '\'' +
+               ", city='" + city + '\'' +
+               ", district='" + district + '\'' +
+               ", state='" + state + '\'' +
+               ", country='" + country + '\'' +
+               ", pincode=" + pincode +
+               ", isDefault=" + isDefault +
+               '}';
+   }
 }

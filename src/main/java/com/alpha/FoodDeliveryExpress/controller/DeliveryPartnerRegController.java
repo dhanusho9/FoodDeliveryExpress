@@ -10,13 +10,13 @@ import com.alpha.FoodDeliveryExpress.service.DeliveryPartnerService;
 
 @RestController
 public class DeliveryPartnerRegController {
-	
-	   @Autowired
-	    private DeliveryPartnerService deliveryPartnerService;
 
-	    @PostMapping("/deliveryPartner/register")
-	    public void adding(@RequestBody DeliveryPartnerDto deliveryPartnerDto){
-	        deliveryPartnerService.adding(deliveryPartnerDto);
-	    }
+	@Autowired
+	private DeliveryPartnerService deliveryPartnerService;
+
+	@PostMapping("/deliveryPartner/register")
+	public void adding(@RequestBody DeliveryPartnerDto deliveryPartnerDto) {
+		deliveryPartnerService.adding(deliveryPartnerDto);
+	}
 
 }

@@ -15,7 +15,7 @@ public class RestaurantRegController {
     @Autowired
     private RestaurantService restaurantService;
 
-    @PostMapping("/restaurant/register")
+	@PostMapping("/restaurant/register")
     private void adding(@RequestBody RestaurantReqDto restaurantReqDto){
 
         restaurantService.adding(restaurantReqDto);

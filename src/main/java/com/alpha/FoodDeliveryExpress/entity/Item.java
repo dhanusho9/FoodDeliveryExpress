@@ -32,6 +32,23 @@ public class Item {
 
 	 
 	    private int numberOfServes;
+	    
+	    @ManyToOne
+	    @JoinColumn(name = "restaurant_id")
+	    private Restaurant restaurant;
+
+	    public Item(Restaurant restaurant) {
+	        this.restaurant = restaurant;
+	    }
+
+	    public Restaurant getRestaurant() {
+	        return restaurant;
+	    }
+
+	    public void setRestaurant(Restaurant restaurant) {
+	        this.restaurant = restaurant;
+	    }
+
 
 	    // No-arg constructor
 	    public Item() {

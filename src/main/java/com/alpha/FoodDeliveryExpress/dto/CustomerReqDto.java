@@ -49,4 +49,9 @@ public class CustomerReqDto {
 
 	    public CustomerReqDto() {
 	    }
+
+		public CustAddressReqDto[] getAddresses() {
+			// TODO Auto-generated method stub
+			return null;
+		}
 }
